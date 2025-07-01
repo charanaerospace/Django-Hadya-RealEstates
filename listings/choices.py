@@ -1,3 +1,13 @@
+"""
+Dictionaries containing choices for various fields in the listings app.
+
+The keys in these dictionaries represent the values that will be stored in the
+database, while the values represent the human-readable labels that will be
+displayed to the user.
+"""
+
+
+
 bedroom_choices = {
     '1': 1,
     '2': 2,

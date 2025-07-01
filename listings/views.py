@@ -1,3 +1,10 @@
+#Handles the search functionality for the listings application.
+# Filters the queryset based on various search criteria such
+# as keywords, city, state, bedrooms, and price.
+# Passes the filtered queryset and other relevant context data to the search.html
+# template for rendering.
+
+
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
 from .choices import  price_choices, bedroom_choices, state_choices
@@ -61,3 +68,4 @@ def search(request):
     }
 
     return render(request,'listings/search.html',context)
+

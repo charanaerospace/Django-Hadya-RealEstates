@@ -1,3 +1,12 @@
+"""
+Represents a contact made by a user for a specific listing.
+
+The `Contact` model stores information about a user's contact with a real estate listing,
+including the listing details, the user's name, email, phone, and message, as well as the date of the contact.
+It also stores the ID of the user who made the contact and the email of the realtor associated with the listing,
+if available.
+"""
+
 from django.contrib.auth.models import User
 from django.db import models
 from datetime import datetime

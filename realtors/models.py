@@ -1,3 +1,9 @@
+#The Realtor model represents a real estate agent in the system.
+#It includes fields for the agent's name, photo, description, phone number, email address,
+#whether they are a "Most Valuable Professional" (MVP) realtor, and their hire date.
+#The model is ordered by hire date in descending order, and the string representation of the model is the agent's name.
+
+
 from django.db import models
 from django.utils.timezone import now
 from django.core.validators import RegexValidator

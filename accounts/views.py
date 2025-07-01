@@ -1,3 +1,11 @@
+#+ Handles the registration of a new user. This code is executed when the user submits the registration form.
+#+
+#+ It first checks if the passwords entered match, and then checks if the username or email already exists in the system. If either of these checks fail, it displays an error message and redirects the user back to the registration page.
+#+
+#+ If the checks pass, it creates a new user in the system with the provided username, password, email, first name, and last name. It then saves the user and displays a success message, redirecting the user to the login page.
+#+
+
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -23,9 +31,13 @@ def login(request):
             messages.error(request, 'Invalid credentials')
             return redirect('login')
     return render(request, 'accounts/login.html')
-
 # Register
 def register(request):
+    """
+    Handles the registration of a new user. This code is executed when the user submits the registration form.
+    It first checks if the passwords entered match, and then checks if the username or email already exists in the system. If either of these checks fail, it displays an error message and redirects the user back to the registration page.
+    If the checks pass, it creates a new user in the system with the provided username, password, email, first name, and last name. It then saves the user and displays a success message, redirecting the user to the login page.
+    """
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "realtors",
     "django.contrib.humanize",
     'accounts',
-    'contact'
+    'contact',
+    'django.contrib.sitemaps'
 
 ]
 
@@ -103,6 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        'OPTIONS': {
+            'min_length': 8, # Require at least 8 characters
+        }
     },
     {
         "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
@@ -143,7 +147,7 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger"
 }
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #Email Configs
 #EMAIL_HOST ='smtp.gmail.com'
 #EMAIL_PORT = 587

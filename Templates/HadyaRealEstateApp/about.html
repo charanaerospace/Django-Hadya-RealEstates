@@ -1,3 +1,10 @@
+<!--This HTML template extends the 'base.html' template and provides the content for the 'About' page of the Hadya Real Estate application. It includes the following sections:-->
+<!--1. Showcase section: Displays the page title and a brief description.-->
+<!--2. Breadcrumb section: Provides navigation links to the home page and the current 'About' page.-->
+<!--3. About section: Provides information about the real estate company, including an image and descriptive text.-->
+<!--4. Seller of the Month section: Displays the current 'Seller of the Month' if available, including their photo, name, and description.-->
+<!--5. Work section: Provides a call-to-action button to view the featured listings.-->
+<!--6. Team section: Displays the list of realtors, including their photos, names, and contact information.-->
 <!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
@@ -56,8 +63,8 @@
         {% if mvp_realtors %}
           {% for realtor in mvp_realtors %}
           <div class="card mb-3">
-            {% if realtor.photo_main %}
-              <img class="card-img-top" src="{{ realtor.photo_main.url }}" alt="Seller of the month">
+            {% if realtor.photo_realtor %}
+              <img class="card-img-top" src="{{ realtor.photo_realtor.url }}" alt="Seller of the month">
             {% endif %}
             <div class="card-body">
               <h5 class="card-title">Seller Of The Month</h5>
@@ -90,8 +97,8 @@
     <div class="row text-center">
       {% for realtor in realtors %}
       <div class="col-md-4">
-        {% if realtor.photo_main %}
-        <img src="{{ realtor.photo_main.url }}" alt="{{ realtor.name }}" class="rounded-circle mb-3 img-fluid">
+        {% if realtor.photo_realtor %}
+        <img src="{{ realtor.photo_realtor.url }}" alt="{{ realtor.name }}" class="rounded-circle mb-3 img-fluid">
         {% endif %}
         <h4>{{ realtor.name }}</h4>
         <p class="text-success">
